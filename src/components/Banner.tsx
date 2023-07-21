@@ -1,6 +1,5 @@
 import React from 'react';
 
-import useBanner from '../hooks/useBanner.';
 const Banner: React.FC = () => {
    return (
       <>
