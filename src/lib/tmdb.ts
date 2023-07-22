@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { Media } from '../types/type';
 
-const apiKey = process.env.tmdb_key
+const apiKey = process.env.NEXT_PUBLIC_TMDB
 const uri = 'https://api.themoviedb.org/3';
 console.log(apiKey)
 export async function tmdb(param: string): Promise<Media[]> {
   const result = await axios.get(`${uri}${param}`, {
     headers: {
       accept: 'application/json',
-      Authorization: apiKey,
+      Authorization: `Bearer ${apiKey}`,
     },
   });
   const films: Media[] = [];
